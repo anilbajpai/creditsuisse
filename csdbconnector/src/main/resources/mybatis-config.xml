@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				 <property value="com.mysql.jdbc.Driver" name="driver" />        
+			    <property value="jdbc:mysql://localhost:3306/creditsuisse" name="url" /> 
+				<property  name="username" value="root" />
+				<property value="Vibha@1405" name="password" />
+				 <property value="/* ping */ SELECT * from Dual" name="poolPingQuery" />
+
+				<property value="true" name="poolPingEnabled" />
+				<property value="20" name="poolPingConnectionsNotUsedFor" />
+				<property value="100" name="poolMaximumActiveConnections" />
+				<property value="25" name="poolMaximumIdleConnections" />
+				<property value="10000" name="poolMaximumCheckoutTime" />
+
+			</dataSource>
+
+		</environment>
+
+	</environments>
+<mappers>
+
+<mapper resource="com/cs/entities/mapper/ClientMasterMapper.xml"/>
+<mapper resource="com/cs/entities/mapper/ExecutionMstMapper.xml"/>
+<mapper resource="com/cs/entities/mapper/ExecutionOrderTxnMapper.xml"/>
+<mapper resource="com/cs/entities/mapper/InstrumentMstMapper.xml"/>
+<mapper resource="com/cs/entities/mapper/OrderBookMapper.xml"/>
+</mappers>
+	
+
+</configuration>

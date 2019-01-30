@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+  <classPathEntry location="d:/jar/mysql-connector-java-5.1.43.jar"/>
+
+  <context id="DBTables" targetRuntime="MyBatis3">
+    <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+        connectionURL="jdbc:mysql://localhost:3306/creditsuisse"
+        userId="root"
+        password="Vibha@1405">
+    </jdbcConnection>
+
+    <javaTypeResolver >
+      <property name="forceBigDecimals" value="false" />
+    </javaTypeResolver>
+
+    <javaModelGenerator targetPackage="com.cs.entities" targetProject="csdbconnector">
+      <property name="enableSubPackages" value="false" />
+      <property name="trimStrings" value="true" />
+    </javaModelGenerator>
+
+    <sqlMapGenerator targetPackage="com.cs.entities.mapper"  targetProject="csdbconnector">
+      <property name="enableSubPackages" value="false" />
+    </sqlMapGenerator>
+
+    <javaClientGenerator type="XMLMAPPER" targetPackage="com.cs.dao"  targetProject="csdbconnector">
+      <property name="enableSubPackages" value="false" />
+    </javaClientGenerator>
+
+
+
+    <table schema="creditsuisse" tableName="execution_mst"   >
+ <!--  <columnOverride column="class_"  property="classVar"  />
+ <columnOverride column="package_" property="packageVar"/>
+ <columnOverride column="void_" property="voidVar"/>
+  --> 
+  
+                </table>
+
+  </context>
+</generatorConfiguration>
